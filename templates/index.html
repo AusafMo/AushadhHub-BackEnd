@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>औषध HUB</title>
+    <link rel="stylesheet" href="../static/stylesheets/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/webpage_logo_final.png">
+    <link rel="shortcut icon" href="#">
+    <script src="../static/scripts/script.js" defer></script>
+    <!-- <script src="https://code.jscharting.com/latest/jscharting.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <div class="textandlogo">
+                    <a href="/" class="logo"> <img src="../static/img/logo.svg" alt="logo"> </a>
+                    <span class="logoname"><h1>औषध HUB</h1></span>
+                </div>
+
+                <div class="toggle">
+                    <!-- <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                      <i class="fas fa-moon"></i>
+                      <i class="fas fa-sun"></i>
+                      <span class="ball"></span>
+                    </label> -->
+                  </div>
+                
+            </div>
+        </header>
+        <div class="tool-section">
+            <h1 class="toolheading" style="text-shadow: 1px 1px #888;">Medicinal Herb Prediction</h1>
+            <p class="slogan">The aim of this project is to take raw images of the leaves of plants, upon which it identifies whether the plant is one of the 40 medicinal leaves in the chosen dataset of medicinal herbs, if yes, then provide the user with any relevant information relating to the use case and procedure to use them.</p>
+            <div class="toolwindow">
+                <div class="section">
+                        <div class="tool-span">
+                            <div class="tool-area">
+                                <div class="uploadsection" >
+                                    <div class="before-upload upload-area">
+                                        <div class="afterImage" id="something">
+                                            <img id="image" style="width:auto; height:120px; margin-bottom: 1rem;" class="normal"/>
+                                        </div>
+                                        <label>
+                                            <img id="svgImage" src="../static/img/tool-box-image.svg" alt="image-logo">
+                                        </label>
+                                        <span class="drag-n-drop-text" id="js-drag-n-drop">Drag &amp; Drop, Upload or Paste image <br></span>
+                                      
+                                        <label id="svgImage2" for="file" class="browse-btn">
+                                            <img src="../static/img/plus-icon.svg" alt="file upload">
+                                            <span> Browse </span>
+                                        </label>
+                                      
+                                       
+                                        <form action="/upload" method="POST" enctype="multipart/form-data">
+                                            <input type="file" name="file" id="file" hidden="" accept=".jpg,.jpeg,.jpe">
+                                            <span class="drag-n-drop-text"><small>(Max Image Size 5 MB)</small></span>
+                                            <input type="submit" class="custom-button" value="Submit">
+                                        </form>
+                                          
+
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

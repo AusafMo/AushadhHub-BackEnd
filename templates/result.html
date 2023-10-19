@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>औषध HUB</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/stylesheets/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/webpage_logo_final.png">
+    <link rel="shortcut icon" href="#">
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <script type = "text/javascript">
+        var confidence_level = Math.round('{{ confidence_level }}');
+    </script>
+    <script  type="text/javascript" src="../static/scripts/res_script.js" defer></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <div class="textandlogo">
+                    <a href="/" class="logo"> <img src="../static/img/logo.svg" alt="logo"> </a>
+                    <span class="logoname"><h1>औषध HUB</h1></span>
+                </div>
+
+                <div class="toggle">
+                    <!-- dark/light mode -->
+                </div>
+
+            </div>
+        </header>
+        <div class="tool-section">
+            <h1 class="toolheading">Medicinal Herb Prediction</h1>
+            <div class="toolwindow">
+                <div class="section">
+                        <div class="tool-span">
+                            <div class="tool-area">
+
+                                <div class="uploadsection" id="upsection">
+
+                                        <!-- result image -->
+                                        <div class="afterImage" id="something">
+                                            <img src = "{{img_path}}" id="imageRes" class="normal"/>
+                                        </div>
+
+                                        <!-- name and graph -->
+                                        <div class="name-img-percentage">
+                                            <div class="modelresult" id="finalresult">
+                                                <h2>{{prediction_name}}</h2>
+                                            </div>
+
+                                            <div class="modelresult" id="finalresult">
+                                                <div id="chartDiv"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+
+                <div class = "paraSection ">
+                    <p class="slogann">{{description}}</p>
+                </div>
+
+                <!-- reset button -->
+                <div class="d-flex">
+                    <div class="reset-btn">
+                        <a style="text-decoration: none;" href="/" class="logo"><span>Reset</span><img src="../static/img/restart.png" alt="restart"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
