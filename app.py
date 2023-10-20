@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
 import torch
 import numpy as np
 import pandas as pd
 import os
 from PIL import Image
 import torchvision.models as models
-import math
-from torchvision import transforms, datasets, models
+from torchvision import models
+import io
 
 
 app = Flask(__name__)
@@ -22,9 +22,9 @@ def is_image_file(filename):
 
 """################################## PRE PROCESS THE IMAGE #####################################################"""
 
-def process_image(image_path):
+def process_image(image):
     """Process an image path into a PyTorch tensor"""
-    image = Image.open(image_path)
+    # image = Image.open(image_path)
     # Resize
     img = image.resize((256, 256))
 
@@ -124,7 +124,7 @@ def model_loading():
 
 """######################################  PREDICTION FUNCTION  ################################################"""
 
-def predict(image_path, model, topk ):
+def predict(image, model, topk ):
 
     """
     Make a prediction for an image using a trained model
@@ -138,7 +138,7 @@ def predict(image_path, model, topk ):
     Returns
     """
 
-    img_tensor = process_image(image_path)
+    img_tensor = process_image(image)
 
     img_tensor = img_tensor.reshape(1, 3, 224, 224)
 
@@ -155,8 +155,7 @@ def predict(image_path, model, topk ):
         top_classes = [model.idx_to_class[class_] for class_ in topclass.cpu().numpy()[0]]
         top_p = topk.cpu().numpy()[0]
 
-        return img_tensor.cpu().squeeze(), top_p, top_classes
-
+        return  top_p, top_classes
 
 """############################### Extract Info from CSV corresponding to the Index  ############"""
 
@@ -173,48 +172,33 @@ def extract(index):
         return 'Not a valid Index'
 
 """##########################################   ROUTES    ##################################################"""
-# Home Route
-@app.route('/')
-def index():
-    return render_template("index.html")
-
 
 # when the user hits submit button
 @app.route('/upload', methods=['POST', 'GET'])
 def upload_file():
-    
-    if 'file' not in request.files:
-        return 'No file' 
-    file = request.files['file']
-    
-    if file.filename == '':
-        return 'No file selected'
-    
-    if file and is_image_file(file.filename):
-    
-        img_path = 'static/upload/' + file.filename
-        file.save(img_path)
-        # print(img_path)
+    if request.method == "POST":
+        
+        file = request.files['file']
 
-        model = model_loading()
+        if file and is_image_file(file.filename):
 
-        # Predict Function, takes (imagePath, modelName, number of top precitions to return) as parameters
-        img, p, classes = predict(img_path, model, 1)
-        result = pd.DataFrame({'p': p}, index = classes)
+            image_bytes = file.read()
+            image = Image.open(io.BytesIO(image_bytes))
 
-        img_path = '../' + img_path
+            model = model_loading()
 
-        info = extract(classes[0][0])
-       
-        data = {"prediction" : classes[0][1], "confidence_level" : p[0]*100, "info" : info}
+            # Predict Function, takes (modelName, number of top precitions to return) as parameters
+            p, classes = predict(image, model, 1)
 
-        return jsonify(data)
+            info = extract(classes[0][0])
+        
+            data = {"prediction" : classes[0][1], "confidence_level" : p[0]*100, "info" : info}
+
+            return jsonify(data)
 
     return 'Upload failed. Please check for correct file formats, only jpeg and png are accepted.'
-
-    return render_template("result.html")
 
 
 """##################################### MAIN APP CALL #########################################"""
 if __name__ == "__main__":
-    app.run( debug = True)
+    app.run( debug = True )
