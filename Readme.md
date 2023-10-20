@@ -1,3 +1,3 @@
-gcloud builds submit --tag gcr.io/aushadapi-402616/upload_file .
+gcloud builds submit --tag gcr.io/<projectid>/<function> .
 <br>
-gcloud run deploy --image gcr.io/aushadapi-402616/upload_file --platform managed
+gcloud run deploy --image gcr.io/<projectid>/<function>  --platform managed
