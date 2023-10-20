@@ -184,7 +184,7 @@ def index():
 def upload_file():
     
     if 'file' not in request.files:
-        return 'No file part' 
+        return 'No file' 
     file = request.files['file']
     
     if file.filename == '':
@@ -194,7 +194,7 @@ def upload_file():
     
         img_path = 'static/upload/' + file.filename
         file.save(img_path)
-        print(img_path)
+        # print(img_path)
 
         model = model_loading()
 
@@ -203,7 +203,6 @@ def upload_file():
         result = pd.DataFrame({'p': p}, index = classes)
 
         img_path = '../' + img_path
-        print(classes[0][0], classes[0][1], p[0])
 
         info = extract(classes[0][0])
        
@@ -218,4 +217,4 @@ def upload_file():
 
 """##################################### MAIN APP CALL #########################################"""
 if __name__ == "__main__":
-    app.run( debug = True, port = 8000)
+    app.run( debug = True)
