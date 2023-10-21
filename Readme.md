@@ -8,7 +8,7 @@ For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> F
 <br>
 
 ### Gcloud SDK shell commands to push, and deploy the service (should've set up GCloud beforehand, you don't need Docker on your machine though):
-  * if you are running the shell in the same directory as your Dockerfile (which you probably should), replace Path/to/Dockerfile with `.` (a dot)
+  * if you are running the shell in the same directory as your Dockerfile (which you probably should), replace Path/to/Dockerfile with `.` (a period or fullstop)
   * replace projectid with the ID associated with your project on the Gcloud console.
   * replace function with the name of the function you want your POST request from frontend to hit On.
     
