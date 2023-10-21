@@ -45,3 +45,12 @@ For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> F
         confidence_level = responsedata['confidence_level']
         info = responsedata['info']
   ```
+#### In Action :
+ 
+
+
+https://github.com/AusafMo/AushadhHubCloudModel/assets/75237046/eac3f9db-1847-438c-a5c8-3cceb9e0b8ae
+
+
+
+    
