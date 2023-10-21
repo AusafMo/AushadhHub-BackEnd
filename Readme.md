@@ -1,9 +1,9 @@
 🙋‍♂️
 **This Project is divided across two repositories, This repo deals with the app/model deployed on cloud**
 <br>
-For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> Frontend Repo </a>
-<br>
-## What is this ? :
+- For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> Frontend Repo </a>
+- For Model Training see <a href = "https://github.com/AusafMo/NoteBook-Medicinal-Herb-Model-ResNet"> Training Notebook </a>
+## What is this? :
 - The Project aims to solve the problem of identification of medicinal herbs.
 - The Machine Learning Model uses ResNet, with a validation accuracy of 98% and testing accuracy of 96%.
 - The training and testing dataset contains over 1500 images across 50 medicinal herb species.
