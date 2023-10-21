@@ -2,6 +2,26 @@
 **This Project is divided across two repositories, This repo deals with the app/model deployed on cloud**
 <br>
 For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> Frontend Repo </a>
+<br>
+
+## Tech Stack Used :
+  * Python 3
+  * Flask
+  * Pandas
+  * Numpy
+  * Pillow
+  * PyTorch
+  * FineTuned ResNet50 model trained on Mendeley Medicinal Leaf Dataset
+  * Dataset:
+        <a href = "https://data.mendeley.com/datasets/nnytj2v3n5/1">
+                  ```
+                  S, Roopashree; J, Anitha (2020),
+                  “Medicinal Leaf Dataset”,
+                  Mendeley Data, V1, doi: 10.17632/nnytj2v3n5.1
+                  ```     
+        </a>
+  * Google Cloud
+  * GitHub
 
 # Model Deployment as a Fask WebApp on Google Cloud Services ☁️ : 
 
