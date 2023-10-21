@@ -1,8 +1,9 @@
+🙋‍♂️
 **This Project is divided across two repositories, This repo deals with the app/model deployed on cloud**
 <br>
 For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> Frontend Repo </a>
 
-# Model Deployment as a Fask WebApp on Google Cloud Services:
+# Model Deployment as a Fask WebApp on Google Cloud Services ☁️ : 
 
 <br>
 
