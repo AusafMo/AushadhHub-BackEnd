@@ -1,5 +1,5 @@
 🙋‍♂️
-**This Project is divided across two repositories, This repo deals with the app/model deployed on cloud**
+**This Project is divided across three repositories, This repo deals with the app/model deployed on cloud**
 <br>
 - For Frontend App see <a href = "https://github.com/AusafMo/AushadHubFrontEnd"> Frontend Repo </a>
 - For Model Training see <a href = "https://github.com/AusafMo/NoteBook-Medicinal-Herb-Model-ResNet"> Training Notebook </a>
