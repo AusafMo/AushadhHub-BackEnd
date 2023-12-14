@@ -51,11 +51,11 @@
       import requests
       response = requests.post("YourServiceURLfromGcloud", files={'file': open("imgPath", 'rb')})
   ```
-For instance, a post request for my deployed service on GCP is like the following :
+For instance, a post request for my deployed service on GCP is the following :
 ```
   response = requests.post("https://aushadhub-prcsxigeha-el.a.run.app/upload", files={'file': open("imgPath", 'rb')})
 ```
- * if you're encountering 403 Error (proxy or tunnel connection error), try adding header and/or proxy to your requests :
+ * if you're encountering 403 Error (proxy or tunnel connection error), make sure you are not using Python-Anywhere to host your front-end, else try adding header and/or proxy to your requests :
    
    ```
    header = { Define your header, to find it just run "navigator.userAgent" on your Chrome dev console }
