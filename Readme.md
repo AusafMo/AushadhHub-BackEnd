@@ -28,7 +28,7 @@
   * Google Cloud
   * GitHub
 
-# Model Deployment as a Fask WebApp on Google Cloud Services ☁️ : 
+# Model Deployment as a Flask WebApp on Google Cloud Services ☁️ : 
 
 <br>
 
