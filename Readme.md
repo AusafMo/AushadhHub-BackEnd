@@ -11,10 +11,10 @@
 ## Tech Stack Used :
   * Python 3
   * Flask
+  * NumPy
   * Pandas
-  * Numpy
-  * Pillow
   * PyTorch
+  * Tensorflow-Keras
   * FineTuned ResNet50 model trained on Mendeley Medicinal Leaf Dataset
   * Dataset:
         <a href = "https://data.mendeley.com/datasets/nnytj2v3n5/1">
